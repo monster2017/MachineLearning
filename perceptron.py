@@ -9,8 +9,8 @@ class Perceptron(object):
         """
         初始化感知器，设置输入参数的个数，以及激活函数。
         激活函数的类型为double -> double
-        :param input_num:
-        :param activator:
+        :param input_num:输入参数的个数
+        :param activator:激活函数
         """
         self.activator = activator
         #权重向量初始化为0, 每有一个参数就初始化一个0.0
@@ -42,10 +42,10 @@ class Perceptron(object):
     def train(self, input_vecs, labels, iteration, rate):
         """
         输入训练数据：一组向量、与每个向量对应的label；以及训练轮数、学习率
-        :param input_vecs:
-        :param labels:
-        :param iteration:
-        :param rate:
+        :param input_vecs:一组向量
+        :param labels: 对应向量的结果
+        :param iteration:训练轮数
+        :param rate:学习率
         :return:
         """
         for i in range(iteration):
