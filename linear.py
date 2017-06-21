@@ -1,4 +1,5 @@
 from perceptron import Perceptron
+import matplotlib.pyplot as plt
 
 #定义激活函数f
 f = lambda x:x
@@ -27,6 +28,9 @@ def train_linear_unit():
     lu.train(input_vecs,labels,10,0.01)
     #返回训练好的线性单元
     return lu
+
+
+
 
 if __name__ == '__main__':
     '''训练线性单元'''
