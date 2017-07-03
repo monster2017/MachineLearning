@@ -1,7 +1,7 @@
 from functools import reduce
 import random
 '''
-神经网络的实现
+神经网络的实现 面向对象
     基本模型
             Network
             /      \
