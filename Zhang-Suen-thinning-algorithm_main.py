@@ -3,7 +3,6 @@ import matplotlib
 #matplotlib.use("WXAgg", warn=True)
 import matplotlib.pyplot as plt
 import skimage.io as io
-from skimage.color import convert_colorspace
 from PIL import Image
 
 import cv2
@@ -12,7 +11,7 @@ import matplotlib.cm as cm
 import scipy.signal as signal
 from skimage import img_as_ubyte
 "load image data"
-Img_Original =  io.imread('F:/MachineLearning/Image25.png', as_grey=True)     # Gray image, rgb images need pre-conversion彩图转灰图
+Img_Original =  io.imread('F:/MachineLearning/6046.png', as_grey=True)     # Gray image, rgb images need pre-conversion彩图转灰图
 "Convert gray images to binary images using Otsu's method"
 from skimage.filters import threshold_otsu
 
@@ -71,12 +70,12 @@ def zhangSuen(image):
 BW_Skeleton = zhangSuen(BW_Original)
 # opencv :binary images   :  numpy.uint8   scikit-image numpy.float64
 cv_image = img_as_ubyte(BW_Skeleton)    #Convert an image to 8-bit unsigned integer format.
-cv2.imwrite('F:/MachineLearning/Image25-1.png',cv_image)
+cv2.imwrite('F:/MachineLearning/6046-1.png',cv_image)
 
 '''
 背景色修改
 '''
-im = Image.open('F:/MachineLearning/Image25-1.png')
+im = Image.open('F:/MachineLearning/6046-1.png')
 #im.show()
 
 row,colums = im.size
@@ -89,7 +88,7 @@ for i in range(row):
         else:
             im.putpixel((i,j),255)
 im.show()
-im.save("F:/MachineLearning/Image25-1.png")
+im.save("F:/MachineLearning/6046-1.png")
 '''
 #hist
 img = cv2.imread('F:/MachineLearning/1-2.png',0)
